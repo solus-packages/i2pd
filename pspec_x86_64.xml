@@ -1,0 +1,63 @@
+<PISI>
+    <Source>
+        <Name>i2pd</Name>
+        <Packager>
+            <Name>Devil505</Name>
+            <Email>devil505@tuta.io</Email>
+        </Packager>
+        <License>BSD-3-Clause</License>
+        <PartOf>network.web</PartOf>
+        <Summary xml:lang="en">Simplified C++ implementation of I2P client</Summary>
+        <Description xml:lang="en">i2pd (I2P Daemon) is a full-featured C++ implementation of I2P client.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>i2pd</Name>
+        <Summary xml:lang="en">Simplified C++ implementation of I2P client</Summary>
+        <Description xml:lang="en">i2pd (I2P Daemon) is a full-featured C++ implementation of I2P client.
+</Description>
+        <PartOf>network.web</PartOf>
+        <Files>
+            <Path fileType="config">/etc/i2pd/i2pd.conf</Path>
+            <Path fileType="config">/etc/i2pd/subscriptions.txt</Path>
+            <Path fileType="config">/etc/i2pd/tunnels.conf</Path>
+            <Path fileType="library">/usr/lib/systemd/system/i2pd.service</Path>
+            <Path fileType="library">/usr/lib/tmpfiles.d/i2pd.conf</Path>
+            <Path fileType="executable">/usr/sbin/i2pd</Path>
+            <Path fileType="doc">/usr/share/doc/i2pd/LICENSE</Path>
+            <Path fileType="doc">/usr/share/doc/i2pd/README.md</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/family/gostcoin.crt/certificates/family/gostcoin.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/family/i2p-dev.crt/certificates/family/i2p-dev.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/family/i2pd-dev.crt/certificates/family/i2pd-dev.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/family/mca2-i2p.crt/certificates/family/mca2-i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/family/volatile.crt/certificates/family/volatile.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/atomike_at_mail.i2p.crt/certificates/reseed/atomike_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/backup_at_mail.i2p.crt/certificates/reseed/backup_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/bugme_at_mail.i2p.crt/certificates/reseed/bugme_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/creativecowpat_at_mail.i2p.crt/certificates/reseed/creativecowpat_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/echelon_at_mail.i2p.crt/certificates/reseed/echelon_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt/certificates/reseed/hottuna_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/igor_at_novg.net.crt/certificates/reseed/igor_at_novg.net.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/lazygravy_at_mail.i2p.crt/certificates/reseed/lazygravy_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/meeh_at_mail.i2p.crt/certificates/reseed/meeh_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/r4sas-reseed_at_mail.i2p.crt/certificates/reseed/r4sas-reseed_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/reseed/zmx_at_mail.i2p.crt/certificates/reseed/zmx_at_mail.i2p.crt</Path>
+            <Path fileType="data">/usr/share/i2pd/certificates/router/orignal_at_mail.i2p.crt/certificates/router/orignal_at_mail.i2p.crt</Path>
+            <Path fileType="man">/usr/share/man/man1/i2pd.1</Path>
+            <Path fileType="data">/var/lib/i2pd/certificates</Path>
+            <Path fileType="data">/var/lib/i2pd/i2pd.conf</Path>
+            <Path fileType="data">/var/lib/i2pd/subscriptions.txt</Path>
+            <Path fileType="data">/var/lib/i2pd/tunnels.conf</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2018-08-15</Date>
+            <Version>2.19.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Devil505</Name>
+            <Email>devil505@tuta.io</Email>
+        </Update>
+    </History>
+</PISI>

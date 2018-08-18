@@ -1,0 +1,43 @@
+name       : i2pd
+version    : 2.19.0
+release    : 1
+source     :
+    -  https://github.com/PurpleI2P/i2pd/archive/2.19.0.tar.gz : 7202497ffc3db632d0f7fed93eafaf39aa75efea199705dae7d022249b069eb9
+license    : BSD-3-Clause
+component  : network.web
+summary    : Simplified C++ implementation of I2P client
+description: |
+    i2pd (I2P Daemon) is a full-featured C++ implementation of I2P client.
+builddeps  :
+     - pkgconfig(openssl)
+     - pkgconfig(zlib)
+     - libboost-devel
+     - miniupnpc-devel
+setup      : |
+    cd build
+    %cmake
+build      : |
+    cd build
+    %make
+install    : |
+    cd build
+    install -Dm0755 i2pd $installdir/usr/sbin/i2pd
+    cd $workdir
+    install -Dm0644 contrib/debian/i2pd.service $installdir/usr/lib/systemd/system/i2pd.service
+    install -Dm0644 contrib/debian/i2pd.tmpfile $installdir/usr/lib/tmpfiles.d/i2pd.conf
+    install -Dm0644 contrib/i2pd.conf $installdir/etc/i2pd/i2pd.conf
+    install -Dm0644 contrib/tunnels.conf $installdir/etc/i2pd/tunnels.conf
+    install -Dm0644 contrib/subscriptions.txt $installdir/etc/i2pd/subscriptions.txt
+    install -Dm644 README.md "$installdir/usr/share/doc/i2pd/README.md"
+    install -Dm644 LICENSE "$installdir/usr/share/doc/i2pd/LICENSE"
+    install -Dm644 debian/i2pd.1 "$installdir/usr/share/man/man1/i2pd.1"
+    install -d -m0750 $installdir/var/lib/i2pd
+    ln -s "/etc/i2pd/i2pd.conf" "$installdir/var/lib/i2pd/i2pd.conf"
+    ln -s "/etc/i2pd/tunnels.conf" "$installdir/var/lib/i2pd/tunnels.conf"
+    ln -s "/etc/i2pd/subscriptions.txt" "$installdir/var/lib/i2pd/subscriptions.txt"
+    cd $workdir/contrib
+    find ./certificates -type d -exec install -d {} $installdir/usr/share/i2pd/{} \;
+    find ./certificates -type f -exec install -Dm644 {} $installdir/usr/share/i2pd/{}/{} \;
+    ln -s "/usr/share/i2pd/certificates" "$installdir/var/lib/i2pd/certificates"
+    chmod -R o= $installdir/var/lib/i2pd
+
